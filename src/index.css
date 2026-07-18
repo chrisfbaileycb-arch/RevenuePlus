@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 4%;
+    --foreground: 210 15% 92%;
+    --card: 215 35% 7%;
+    --card-foreground: 210 15% 92%;
+    --popover: 215 35% 7%;
+    --popover-foreground: 210 15% 92%;
+    --primary: 193 100% 50%;
+    --primary-foreground: 215 35% 7%;
+    --secondary: 215 20% 13%;
+    --secondary-foreground: 210 15% 92%;
+    --muted: 215 20% 13%;
+    --muted-foreground: 215 10% 50%;
+    --accent: 215 20% 13%;
+    --accent-foreground: 210 15% 92%;
+    --destructive: 4 90% 62%;
+    --destructive-foreground: 210 15% 92%;
+    --border: 215 15% 16%;
+    --input: 215 15% 16%;
+    --ring: 193 100% 50%;
+    --radius: 0.375rem;
+  }
+
+  * {
+    @apply border-rp-border;
+  }
+
+  html {
+    background-color: #080c10;
+    color: #e6edf3;
+  }
+
+  body {
+    @apply bg-rp-bg text-rp-text font-sans antialiased;
+    background-color: #080c10;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0d1117;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #21262d;
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #30363d;
+  }
+}
+
+@layer components {
+  .terminal-panel {
+    @apply bg-rp-panel border border-rp-border rounded-md font-mono text-sm;
+  }
+
+  .terminal-header {
+    @apply flex items-center gap-1.5 px-3 py-2 border-b border-rp-border bg-rp-surface rounded-t-md;
+  }
+
+  .terminal-dot {
+    @apply w-2.5 h-2.5 rounded-full;
+  }
+
+  .json-key {
+    color: #79c0ff;
+  }
+
+  .json-string {
+    color: #a5d6ff;
+  }
+
+  .json-number {
+    color: #f2cc60;
+  }
+
+  .json-boolean {
+    color: #d2a8ff;
+  }
+
+  .status-online {
+    @apply inline-flex items-center gap-1.5 text-rp-green text-xs font-mono;
+  }
+
+  .status-offline {
+    @apply inline-flex items-center gap-1.5 text-rp-red text-xs font-mono;
+  }
+
+  .cmd-output {
+    @apply font-mono text-xs leading-relaxed text-rp-text;
+  }
+
+  .cmd-success {
+    @apply text-rp-green;
+  }
+
+  .cmd-error {
+    @apply text-rp-red;
+  }
+
+  .cmd-info {
+    @apply text-rp-cyan;
+  }
+
+  .cmd-muted {
+    @apply text-rp-muted;
+  }
+}
+
+.pos-item {
+  cursor: pointer;
+}
+
+/* Syntax highlight for JSON */
+pre .string { color: #a5d6ff; }
+pre .number { color: #f2cc60; }
+pre .boolean { color: #d2a8ff; }
+pre .null { color: #ffa657; }
+pre .key { color: #79c0ff; }
