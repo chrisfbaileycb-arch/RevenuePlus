@@ -1,0 +1,5 @@
+{
+  "name": "Revenue Pulse | AI Phone Ordering Agent Bridge",
+  "description": "Headless AI agent middleware for POS systems. No API keys required. Revenue Pulse enables AI phone ordering agents to read and inject orders into any POS interface.",
+  "requestFramePermissions": []
+}
